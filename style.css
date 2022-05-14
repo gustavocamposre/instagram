@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+body{
+    width: 100%; /* largura */
+    min-height: 100vh; /*estou definindo a altura principal é essa */
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-wrapper{ /* criei para deixar tudo no meio da tela */
+    display: flex; /* ATENÇÃO: para que serve? Quando usamos, ele faz virar um flex container. Isso quer dizer que todos os elementos dentro desse conteiner ficarão em linha, ocupando todo o espaço da linha de que precisarem */
+    align-items: center; /* align intems serve para modificar o alinhamento vertical dos meus elementos. Como coloquei center, quer dizer que, verticalmente, os meus elementos ficarão alinhados ao centro */
+    justify-content: center; /* igual ao de cima, mas na direção horizontal. Start manda começar o alinhamento da esquerda para direita */
+    width: 60%;
+    height: 100vh;
+}
+.instagram-phone{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.instagram-phone img{
+    height: 50rem;
+}
+.instagram-content{
+    display: flex;
+    align-items: center;/* como embaixo colocamos para coluna, align items passou a ser horizontal */
+    justify-content: space-around; /* como embaixo colocamos para coluna, justify contente passou a ser vertical */
+    flex-direction: column; /* era linha, mudamos para coluna */
+    width: 50%;
+    min-height: 34rem;
+}
+.group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; /* column sempre inverte os eixos  */
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.3rem 0;
+    border: 1px solid lightcyan;
+}
+.group:nth-child(1){ /* selecionando o filho número 1 */
+    min-height: 19rem;
+}
+.instagram-logo{
+    height: 3rem;
+}
+.profile-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* arredonda */
+    overflow: hidden; /* mas é aqui que é escondido o que sobra do arredondamento */
+}
+.profile-photo img{
+    height: 7rem;
+}
+.instagram-login{
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+.instagram-logout{
+    color:#0095f6;
+    margin-top: 1rem;
+}
+.not-account{
+    color: rgb(160, 160, 160)
+}
+.link-blue{
+    color: #0095f6;
+}
+.get-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0;
+    font-weight: bold;
+}
+.download{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly; /* deixa os mesmos espaços ao lado e ao meio */
+    align-items: center;
+    padding: 1rem;
+}
+.app-download{
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+.app-download:nth-child(1){
+    background-image: url(/googleplay-button.png);
+}
+.app-download:nth-child(2){
+    background-image: url(/apple-button.png);
+}
+/* aqui começamos a trabalhar com a responsividade usando media queries */
+
+@media(max-width: 1024px){
+    .instagram-wrapper{
+        width: 90%;
+    }
+}
+@media(max-width: 650px){
+    .instagram-wrapper{
+        width: 90%;
+    }
+    .instagram-phone{
+        display: none;
+    }
+    .instagram-continue{
+        width: 100%;
+    }
+    .group{
+        border: 1px solid transparent;
+    }
+}
